@@ -3,22 +3,25 @@
 #include <stdio.h>
 #include <sys/wait.h>
 #include <sys/types.h>
-
+//Diego José Juárez García
 void main() {
-	pid_t pid;
+	pid_t pidP2;/*Crea una variable para guardar el pid del 
+	hijo(P2)*/
 	
-	pid = fork();
+	pidP2 = fork();
 
-	if(pid==0)
+	if(pidP2==0)
 	{
-		//estamos en el proceso hijo
+		Si estamos en el proceso P2 muestra el nombre del usuario
 	system("whoami");
 	}
 	else
 	{
-		//estamos en el proceso padre
+		/*Si estamos en el proceso padre espera a que 
+		termine de ejecutar el hijo y muestra su pid y el 
+		del hijo(P2)*/
 		wait(NULL);
-		printf("soy el proceso padre, mi pid es %d\n y el de mi hijo es %d",getpid(),pid);//%d se sustituye por el valor de la funcion o de la variable que hay detras,decimales o enteros
+		printf("soy el proceso padre, mi pid es %d\n y el de mi hijo es %d",getpid(),pid);
 	}
 	
   
