@@ -30,6 +30,8 @@ int main()
         case 0:   //HIJO     	         
             signal(SIGUSR1, manejador); //Función manejadora de la señal
             pause();
+            printf("Soy proceso hijo, mi pid: %d\n",getpid());
+            printf("Voy a enviar la señal al padre, su id: %d\n",getppid());
             kill(getppid(),SIGILL);
             break;    
         default: //PADRE envia 1 señal
