@@ -32,10 +32,10 @@ int main()
             pause();
             printf("Soy proceso hijo, mi pid: %d\n",getpid());
             printf("Voy a enviar la señal al padre, su id: %d\n",getppid());
-            kill(getppid(),SIGILL);
+            kill(getppid(),SIGUSR1);
             break;    
         default: //PADRE envia 1 señal
-            signal(SIGILL, manejadorP); //Función manejadora de la señal
+            signal(SIGUSR1, manejadorP); //Función manejadora de la señal
             printf("Soy proceso padre, mi id: %d\n",getpid());
             sleep(1);
             printf("Voy a enviar la señal al hijo, su id: %d\n",pid_hijo);
