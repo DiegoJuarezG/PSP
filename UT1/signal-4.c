@@ -40,8 +40,8 @@ int main()
             sleep(1);
             printf("Voy a enviar la señal al hijo, su id: %d\n",pid_hijo);
             kill(pid_hijo, SIGUSR1);//ENVIA SEÑAL AL HIJO 
-            sleep(1);
-            
+            pause();
+            sleep(1);            
             break;
     } 
     return 0;
