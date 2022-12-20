@@ -1,5 +1,5 @@
 class Deposito{
-	private double litrosDeposito; //Guarda cuantos litros tiene el deposito 
+	private double litrosDeposito; 
 	private boolean disponible=false; //Guarda si el deposito esta vacio(true) o lleno (false)
 	
 	public synchronized double llenarDepositoCamion() {
@@ -44,7 +44,7 @@ class Camion extends Thread{
 		double carga=0;
 		int suma=0;
 		for(int i=0;i<5;i++) {
-			//Llama 5 veces al metodo llenarDeposito y guarda el valor en una variable
+			//Llama 5 veces al metodo llenarDepositoCamion y guarda el valor en una variable
 			carga=dep.llenarDepositoCamion();
 			suma+=carga;//Suma los litros para mostrar al final cuanto ha cargado en total
 			System.out.println("Camion "+numeroCamion+" carga: "+Math.floor(carga)+" litros.");			
